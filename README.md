@@ -9,29 +9,29 @@
 Golang interface for uploading or downloading files with file.io.
 
 
-## Installation
+### Installation
 
 ```bash
 $ go get -u github.com/rvflash/fileio
 ```
 
-## Usage
+### Usage
 
 
 #### Upload a file
 
 ```go
-	key, err := fileio.Upload("/data/file.txt")
+key, err := fileio.Upload("/data/file.txt")
 ```
 
 #### Upload a file with an expiration date (5 days in this example)
 
 ```go
-	key, err := fileio.UploadWithExpire("/data/file.txt", 5)
+key, err := fileio.UploadWithExpire("/data/file.txt", 5)
 ```
 
 #### Download a file
 
 ```go
-	err := fileio.Download("2ojE41", "/tmp/file.txt")
+err := fileio.Download("2ojE41", "/tmp/file.txt")
 ```
