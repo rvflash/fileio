@@ -17,17 +17,23 @@ $ go get -u github.com/rvflash/fileio
 
 ### Usage
 
+The import of the package and check of errors are ignored for the demo.
+
 
 #### Upload a file
 
 ```go
-key, err := fileio.Upload("/data/file.txt")
+key, _ := fileio.Upload("/data/file.txt")
+println(key)
+// Output: 2ojE41
 ```
 
-#### Upload a file with an expiration date (5 days in this example)
+#### Upload a file with an expiration date (here, 7 days)
 
 ```go
-key, err := fileio.UploadWithExpire("/data/file.txt", 5)
+key, expiry, _ := fileio.UploadWithExpire("/data/file.txt", 7)
+println(key + " expires in " + expiry)
+// Output: aQbnDJ expires in 1 week
 ```
 
 #### Download a file
